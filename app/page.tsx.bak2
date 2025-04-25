@@ -7,50 +7,28 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Progress } from "@/components/ui/progress"
 import { InteractiveButton } from "@/components/ui/interactive-button"
 import {
-  BarChart3,
-  Book,
-  BookOpen,
-  Bot,
-  BrainCircuit,
-  Calendar,
-  ChevronDown,
   ChevronRight,
-  Clock,
-  Code,
-  Computer,
-  CreditCard,
-  DollarSign,
-  FileSearch,
-  Flame,
-  Gauge,
-  GitBranch,
-  HeartPulse,
-  Lightbulb,
-  List,
-  MessageCircle,
-  MonitorSmartphone,
-  Planet,
-  Puzzle,
-  ReceiptText,
-  Rocket,
-  Shield,
-  Smartphone,
-  Trophy,
-  Users,
-  Workflow,
-  X,
-  PiggyBank,
-  Calculator,
-  Cpu,
-  FileCog,
+  ChevronDown,
+  Bot,
   Cog,
   LayoutDashboard,
+  Code,
+  BrainCircuit,
   Eye,
   EyeOff,
   CheckCircle2,
+  Clock,
+  BarChart3,
+  Lightbulb,
+  Rocket,
   Target,
   Zap,
+  Users,
+  Shield,
   Menu,
+  X,
+  Smartphone,
+  BookOpen,
   FileText,
 } from "lucide-react"
 import Image from "next/image"
@@ -1507,7 +1485,130 @@ export default function Presentation() {
           </Tabs>
         </div>
 
-        {/* Conclusão Section */}
+        {/* Resultados Section */}
+
+        <section className="mb-12 scroll-mt-20" id="resultados">
+          <div
+            className="flex items-center gap-2 mb-4 cursor-pointer group clickable rounded-lg p-2"
+            onClick={() => handleSectionClick("resultados")}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && handleSectionClick("resultados")}
+          >
+            <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center transition-transform group-hover:scale-110">
+              {expandedSections.resultados ? <ChevronDown className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+            </div>
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent flex items-center">
+              <BarChart3 className="h-7 w-7 inline-block mr-2 text-blue-600" />
+              Resultados Esperados
+            </h2>
+          </div>
+
+          {expandedSections.resultados && (
+            <div className="mt-8 animate-fadeIn">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100">
+                  <h3 className="text-xl font-bold text-blue-800 mb-4">Benefícios Quantitativos</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-blue-100 rounded-full mt-1">
+                        <BarChart3 className="h-4 w-4 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-blue-800">Redução de Custos Operacionais</h4>
+                        <p className="text-sm text-gray-600">
+                          Redução de 30% nos custos operacionais através da automação de processos manuais.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-blue-100 rounded-full mt-1">
+                        <Clock className="h-4 w-4 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-blue-800">Aumento de Produtividade</h4>
+                        <p className="text-sm text-gray-600">
+                          Aumento de 40% na produtividade da equipe com a eliminação de tarefas repetitivas.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-blue-100 rounded-full mt-1">
+                        <Users className="h-4 w-4 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-blue-800">Melhoria no Atendimento</h4>
+                        <p className="text-sm text-gray-600">
+                          Redução de 70% no tempo de resposta ao cliente e aumento de 25% na satisfação.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-6 shadow-lg text-white">
+                  <h3 className="text-xl font-bold mb-4">Retorno sobre Investimento</h3>
+                  <div className="space-y-4">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                      <h4 className="font-medium mb-2">ROI Projetado</h4>
+                      <div className="flex items-end gap-2">
+                        <span className="text-3xl font-bold">250%</span>
+                        <span className="opacity-80 text-sm">em 24 meses</span>
+                      </div>
+                      <p className="text-sm opacity-80 mt-2">
+                        Baseado na redução de custos operacionais e aumento de eficiência nos processos.
+                      </p>
+                    </div>
+
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                      <h4 className="font-medium mb-2">Tempo para Break-even</h4>
+                      <div className="flex items-end gap-2">
+                        <span className="text-3xl font-bold">8</span>
+                        <span className="opacity-80 text-sm">meses após implementação</span>
+                      </div>
+                      <p className="text-sm opacity-80 mt-2">
+                        Considerando a economia gerada pela automação e otimização de processos.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 bg-white rounded-xl p-6 shadow-lg border border-blue-100">
+                <h3 className="text-xl font-bold text-blue-800 mb-4">Benefícios Qualitativos</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-blue-50 rounded-lg p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Shield className="h-5 w-5 text-blue-600" />
+                      <h4 className="font-medium text-blue-800">Maior Conformidade</h4>
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      Garantia de conformidade com normas e regulamentos de saúde ocupacional.
+                    </p>
+                  </div>
+                  <div className="bg-blue-50 rounded-lg p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Lightbulb className="h-5 w-5 text-blue-600" />
+                      <h4 className="font-medium text-blue-800">Melhores Decisões</h4>
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      Tomada de decisão baseada em dados e insights gerados pelos sistemas inteligentes.
+                    </p>
+                  </div>
+                  <div className="bg-blue-50 rounded-lg p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Rocket className="h-5 w-5 text-blue-600" />
+                      <h4 className="font-medium text-blue-800">Escalabilidade</h4>
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      Capacidade de crescer e expandir operações sem aumento proporcional de custos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
 
         <section className="mb-12 scroll-mt-20" id="conclusao">
           <div 
