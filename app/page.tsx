@@ -149,7 +149,7 @@ export default function Presentation() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="relative h-10 w-40">
-              <Image src="/logo-impeto.png" alt="Ímpeto AI Logo" fill style={{ objectFit: "contain" }} priority />
+              <Image src="https://gwakkxqrbqiezvrsnzhb.supabase.co/storage/v1/object/public/images_innovagro//Design%20sem%20nome%20(5).png" alt="Ímpeto AI Logo" fill style={{ objectFit: "contain" }} priority />
             </div>
             <div className="h-6 w-px bg-blue-200" />
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
