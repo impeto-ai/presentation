@@ -29,7 +29,7 @@ import {
   List,
   MessageCircle,
   MonitorSmartphone,
-  Planet,
+  Plane,
   Puzzle,
   ReceiptText,
   Rocket,
